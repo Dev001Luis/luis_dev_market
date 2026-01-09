@@ -3,7 +3,7 @@
 ## Stack
 
 -   **Backend:** PHP 8.3 / Laravel 11 (Service Layer Pattern)
--   **Frontend:** Blade, Tailwind CSS, JavaScript (Async Axios)
+-   **Frontend:** Blade, Tailwind CSS, JavaScript (Async Axios) - Alpine.js
 -   **Database:** MySQL (Relational)
 
 ## Implementation Details

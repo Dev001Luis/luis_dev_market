@@ -17,7 +17,6 @@ class LandingController extends Controller
         // Generate a guest token and store it in the session
         $token = Str::uuid();
         session(['guest_token' => $token, 'user_role' => $request->role]);
-
-        return redirect()->route('dashboard');
+        return redirect()->route('guest.dashboard');
     }
 }
