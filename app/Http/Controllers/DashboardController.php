@@ -13,6 +13,8 @@ class DashboardController extends Controller
         $role = null;
 
         if (Auth::check()) {
+            echo ("\nentro qui 1\n");
+            echo (Auth::user());
             $role = Auth::user()->role;
         } elseif (session()->has('user_role')) {
             $role = session('user_role');

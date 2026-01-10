@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DevShop - Dashboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/1d550103c8.js" crossorigin="anonymous"></script>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script>
         tailwind.config = {
@@ -27,8 +28,9 @@
         <div class="flex items-center gap-4">
             <button @click="darkMode = !darkMode; localStorage.setItem('theme', darkMode ? 'dark' : 'light')"
                 class="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700">
-                <span x-show="!darkMode">🌙</span>
-                <span x-show="darkMode">☀️</span>
+                <span x-show="!darkMode" title="dark-theme"><i class="fa-regular fa-moon"></i></span>
+                <span x-show="darkMode" title="light-theme"><i class="fa-regular fa-solid fa-sun"
+                        style="color: #FFD43B;"></i></i></span>
             </button>
 
             <div x-data="{ open: false }" class="relative">

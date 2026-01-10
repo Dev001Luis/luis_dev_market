@@ -23,9 +23,10 @@ Route::post('/login', [LoginController::class, 'store']);
 // Logout
 Route::post('/logout', [LoginController::class, 'destroy'])->name('logout');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/guest-dashboard', [DashboardController::class, 'index'])->name('guest.dashboard');
 
@@ -35,4 +36,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__ . '/auth.php';
+//require __DIR__ . '/auth.php';

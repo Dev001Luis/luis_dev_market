@@ -14,6 +14,7 @@ class LandingController extends Controller
 
     public function guestAccess(Request $request)
     {
+        echo ($request);
         // Generate a guest token and store it in the session
         $token = Str::uuid();
         session(['guest_token' => $token, 'user_role' => $request->role]);

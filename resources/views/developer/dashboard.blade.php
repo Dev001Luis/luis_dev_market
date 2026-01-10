@@ -37,10 +37,10 @@
                 <div class="p-4 border rounded-xl">
                     <h3 class="font-bold mb-4 border-b pb-2">Back-End</h3>
                     <div class="flex flex-wrap gap-2">
-                        <span
-                            class="bg-blue-100 text-blue-800 px-3 py-1 rounded text-sm">PHP</span>
-                        <button
-                            class="p-1 border-2 border-dashed rounded border-slate-300 text-slate-400">+</button>
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded text-sm">PHP <i
+                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i></span>
+                        <button class="p-1 border-2 border-dashed rounded border-slate-300 text-slate-400">+</button>
                     </div>
                 </div>
             </div>

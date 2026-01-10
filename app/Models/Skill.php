@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Skill extends Model
 {
-    protected $fillable = ['name', 'slug', 'description', 'stars', 'price', 'category'];
+    protected $fillable = ['name', 'slug', 'description', 'stars', 'price', 'category', 'parent_id'];
 
     /**
      * Cast the stars attrubute to our Enum automatically.
