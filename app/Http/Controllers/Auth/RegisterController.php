@@ -17,8 +17,11 @@ class RegisterController extends Controller
     /**
      * Display the registration view.
      */
-    public function create(): View
+    public function show(Request $request): View
     {
+        if ($request->has('role')) {
+            session(['role' => $request->role]);
+        }
         return view('auth.register');
     }
 

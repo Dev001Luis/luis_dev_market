@@ -18,7 +18,7 @@
 <body class="bg-slate-50 text-slate-900 font-sans">
     <div x-data="{ isRecruiter: false }"
         class="min-h-screen flex flex-col items-center justify-center p-4 transition-colors duration-500"
-        :class="isRecruiter ? 'bg-emerald-50' : 'bg-blue-50'">
+        :class="isRecruiter ? 'bg-emerald-100' : 'bg-blue-100'">
 
         <header class="text-center mb-10">
             <h1 class="text-6xl font-black tracking-tighter mb-2">

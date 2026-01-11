@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Skill;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -13,8 +14,6 @@ class DashboardController extends Controller
         $role = null;
 
         if (Auth::check()) {
-            echo ("\nentro qui 1\n");
-            echo (Auth::user());
             $role = Auth::user()->role;
         } elseif (session()->has('user_role')) {
             $role = session('user_role');
@@ -25,8 +24,15 @@ class DashboardController extends Controller
             return redirect()->route('landing')->with('error', 'Please select a role first.');
         }
 
-        // 3. Return the specific view based on the directory structure
-        // If role is 'recruiter', it looks for resources/views/recruiter/dashboard.blade.php
-        return view("{$role}.dashboard");
+        // 3. Fetch Skills for the Search Panel (only if recruiter)
+        $skills = [];
+        if ($role === 'recruiter') {
+            $skills = Skill::all()->groupBy('category');
+        }
+
+
+        // 4. Return the specific view based on the directory structure
+        // Example: If role is 'recruiter', it looks for resources/views/recruiter/dashboard.blade.php
+        return view("{$role}.dashboard", compact('skills'));
     }
 }

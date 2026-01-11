@@ -8,8 +8,11 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
-    public function show()
+    public function show(Request $request)
     {
+        if ($request->has('role')) {
+            session(['role' => $request->role]);
+        }
         return view('auth.login');
     }
 
